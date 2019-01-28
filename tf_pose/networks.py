@@ -94,7 +94,10 @@ def get_graph_path(model_name):
 
 
 def model_wh(resolution_str):
-    width, height = map(int, resolution_str.split('x'))
+    width, height = map(int, resolution_str.split('*'))
     if width % 16 != 0 or height % 16 != 0:
         raise Exception('Width and height should be multiples of 16. w=%d, h=%d' % (width, height))
     return int(width), int(height)
+
+
+
